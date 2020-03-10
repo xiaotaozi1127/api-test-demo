@@ -19,11 +19,11 @@ public class ApiTestService {
     public AddResponse getCheckNumberResult(Integer number) {
         AddResponse response = new AddResponse();
         checkIsValidInput(number, response);
-        incrementNumber(number, response);
+        increaseNumber(number, response);
         return response;
     }
 
-    private void incrementNumber(Integer number, AddResponse response) {
+    private void increaseNumber(Integer number, AddResponse response) {
         if (Objects.isNull(response.getErrorCode())) {
             response.setData(String.valueOf(++number));
             response.setErrorCode(0);
