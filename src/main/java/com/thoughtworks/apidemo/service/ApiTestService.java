@@ -32,12 +32,12 @@ public class ApiTestService {
 
     private void checkIsValidInput(Integer number, AddResponse response) {
         if (number < 0 || number > 1000) {
-            response.setErrorCode(1);
+            response.setErrorCode(-1);
             response.setData(NOT_VALID_INPUT_HINT);
         }
         Integer num = number % 100;
         if (num.equals(timeUtils.getCurrentMinutes())) {
-            response.setErrorCode(1);
+            response.setErrorCode(-2);
             response.setData(EQUAL_MINUTE_HINT);
         }
     }
